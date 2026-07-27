@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import py.una.pol.todoapp.DTO.ToDoDTO;
 import py.una.pol.todoapp.Entity.ToDo;
 import py.una.pol.todoapp.Service.ToDoService;
+import py.una.pol.todoapp.Entity.User;
+import py.una.pol.todoapp.Repository.UserRepository;
 
 @RestController
 @RequestMapping("/todos")
@@ -24,18 +27,30 @@ public class ControllerToDo {
     @Autowired
     ToDoService toDoService;
 
+    @Autowired
+    UserRepository userRepository;
+
     // --- Endpoint de prueba ---
 
     @GetMapping("/helloWorld")
-    public String hola(){
+    public String hola(Authentication authentication){
         return "HelloWorld!";
+    }
+
+    @GetMapping("/helloWorldPublic")
+    public String holaPublic(){
+        return "HelloWorld! Public";
     }
 
     // --- Colección ---
 
     @GetMapping
-    public List<ToDo> listarTodos(){
-        return toDoService.listarTodos();
+    public List<ToDo> listarTodos(Authentication authentication){
+
+        String username = authentication.getName();
+        User usuario = userRepository.findByUsername(username).orElseThrow();
+
+        return toDoService.listarTodos(usuario);
     }
 
     @PostMapping

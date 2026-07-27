@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import py.una.pol.todoapp.DTO.ToDoDTO;
 import py.una.pol.todoapp.Entity.ToDo;
-
+import py.una.pol.todoapp.Entity.User;
 import py.una.pol.todoapp.Repository.ToDoRepository;
 
 @Service
@@ -25,8 +25,8 @@ public class ToDoService {
     @Autowired
     ToDoRepository toDoRepository;
 
-    public List<ToDo> listarTodos(){
-        return toDoRepository.findAll();
+    public List<ToDo> listarTodos(User usuario){
+        return toDoRepository.findByUsuarioId(usuario.getId());
     }
 
     public ResponseEntity<ToDo> crearToDo( ToDoDTO todoDto){
