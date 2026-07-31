@@ -1,0 +1,23 @@
+meta {
+  name: Transferencia Saldo Insuficiente
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/transferencias
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:json {
+  {
+    "destinoUsername": "maria",
+    "monto": 999999999
+  }
+}

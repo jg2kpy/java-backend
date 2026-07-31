@@ -1,0 +1,16 @@
+meta {
+  name: Consulta de Saldo
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/cuentas/me
+  body: none
+  auth: basic
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}

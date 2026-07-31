@@ -1,0 +1,16 @@
+meta {
+  name: Historial de Movimientos
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/cuentas/me/movimientos
+  body: none
+  auth: basic
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}

@@ -1,0 +1,23 @@
+meta {
+  name: Transferencia Exitosa
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/transferencias
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:json {
+  {
+    "destinoUsername": "maria",
+    "monto": 50000
+  }
+}

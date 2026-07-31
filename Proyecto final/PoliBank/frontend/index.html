@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PoliBank</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ========== SECCIÓN AUTH ========== -->
+  <div id="seccion-auth">
+    <div class="auth-card">
+      <div class="logo">
+        <h1>🏦 PoliBank</h1>
+        <p>Tu banco digital</p>
+      </div>
+
+      <!-- Login -->
+      <div id="form-login">
+        <h2>Iniciar sesión</h2>
+        <div class="campo">
+          <label for="login-username">Usuario</label>
+          <input type="text" id="login-username" placeholder="Ej: juan" />
+        </div>
+        <div class="campo">
+          <label for="login-password">Contraseña</label>
+          <input type="password" id="login-password" placeholder="••••••••" />
+        </div>
+        <p id="login-error" class="mensaje-error" hidden></p>
+        <button class="btn-primary" onclick="login()">Ingresar</button>
+        <p class="enlace-toggle">
+          ¿No tenés cuenta?
+          <a href="#" onclick="mostrarRegistro(); return false;">Registrarse</a>
+        </p>
+      </div>
+
+      <!-- Registro -->
+      <div id="form-registro" hidden>
+        <h2>Crear cuenta</h2>
+        <div class="campo">
+          <label for="reg-username">Usuario</label>
+          <input type="text" id="reg-username" placeholder="Ej: maria" />
+        </div>
+        <div class="campo">
+          <label for="reg-password">Contraseña</label>
+          <input type="password" id="reg-password" placeholder="••••••••" />
+        </div>
+        <div class="campo">
+          <label for="reg-nombre">Nombre completo</label>
+          <input type="text" id="reg-nombre" placeholder="Ej: María García" />
+        </div>
+        <p id="registro-error" class="mensaje-error" hidden></p>
+        <button class="btn-primary" onclick="registrar()">Registrarse</button>
+        <p class="enlace-toggle">
+          ¿Ya tenés cuenta?
+          <a href="#" onclick="mostrarLogin(); return false;">Iniciar sesión</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== DASHBOARD ========== -->
+  <div id="seccion-dashboard" hidden>
+
+    <!-- Barra superior -->
+    <nav class="navbar">
+      <span class="navbar-logo">🏦 PoliBank</span>
+      <div class="navbar-usuario">
+        <span id="nav-username"></span>
+        <button class="btn-logout" onclick="logout()">Cerrar sesión</button>
+      </div>
+    </nav>
+
+    <main class="contenido">
+
+      <!-- Fila superior: saldo + transferencia -->
+      <div class="fila-superior">
+
+        <!-- Card saldo -->
+        <div class="card card-saldo">
+          <p class="card-titulo">Saldo disponible</p>
+          <p id="saldo-monto" class="saldo-monto">Cargando...</p>
+          <p id="saldo-fecha" class="saldo-fecha"></p>
+          <button class="btn-secondary" onclick="cargarDashboard()">↻ Actualizar</button>
+        </div>
+
+        <!-- Formulario transferencia -->
+        <div class="card card-transferencia">
+          <h2>Nueva transferencia</h2>
+          <div class="campo">
+            <label for="tf-destino">Usuario destino</label>
+            <input type="text" id="tf-destino" placeholder="Ej: maria" />
+          </div>
+          <div class="campo">
+            <label for="tf-monto">Monto (Gs)</label>
+            <input type="number" id="tf-monto" placeholder="Ej: 50000" min="1" />
+          </div>
+          <p id="tf-mensaje" class="tf-mensaje" hidden></p>
+          <button class="btn-primary" onclick="transferir()">Transferir →</button>
+        </div>
+
+      </div>
+
+      <!-- Historial de movimientos -->
+      <div class="card card-movimientos">
+        <h2>Historial de movimientos</h2>
+        <div id="movimientos-contenido">
+          <p class="texto-vacio">Cargando...</p>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

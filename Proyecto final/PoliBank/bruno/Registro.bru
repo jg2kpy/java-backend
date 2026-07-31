@@ -1,0 +1,23 @@
+meta {
+  name: Registro de Usuario
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/usuarios
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "juan",
+    "password": "secreto123",
+    "nombre": "Juan Pérez"
+  }
+}
+
+vars:pre-request {
+  baseUrl: localhost:8080
+}
