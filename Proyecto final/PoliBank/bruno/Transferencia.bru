@@ -11,8 +11,8 @@ post {
 }
 
 auth:basic {
-  username: {{username}}
-  password: {{password}}
+  username: juan
+  password: secreto123
 }
 
 body:json {
@@ -20,4 +20,8 @@ body:json {
     "destinoUsername": "maria",
     "monto": 50000
   }
+}
+
+vars:pre-request {
+  baseUrl: localhost:8080
 }

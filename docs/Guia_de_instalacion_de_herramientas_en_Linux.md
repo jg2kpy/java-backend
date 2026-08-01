@@ -1,6 +1,6 @@
 # Guía de instalación de herramientas en Linux (Ubuntu)
 
-> **Video-tutorial asociado:** Seguir el video paso a paso 👉 https://www.youtube.com/watch?v=NKQ6CUucBuo
+> **Video-tutorial asociado:** Seguir el video paso a paso 👉 https://youtu.be/hP7v4Ap9u_Y
 
 Antes de la Clase 2 necesitás tener instaladas estas 5 herramientas. Calculá entre 15 y 30 minutos (Linux suele ser más rápido que Windows para este setup). Si algo falla, podés consultar con el instructor para ayuda.
 

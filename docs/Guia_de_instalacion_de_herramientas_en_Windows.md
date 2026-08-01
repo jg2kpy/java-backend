@@ -1,6 +1,6 @@
 # Guía de instalación de herramientas en Windows
 
-> **Video-tutorial asociado:** Seguir el video paso a paso 👉 https://www.youtube.com/watch?v=5PfsdjCzI0s
+> **Video-tutorial asociado:** Seguir el video paso a paso 👉 https://youtu.be/s6U7tviyEJ0
 
 Antes de la Clase 2 necesitás tener instaladas estas 5 herramientas. Calculá entre 25 y 50 minutos. Si algo falla, puedes consultar con el instructor para ayuda.
 
