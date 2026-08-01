@@ -1,4 +1,4 @@
-# Introducción al Desarrollo Backend en Java — FP-UNA
+# Desarrollo Backend en Java — FP-UNA
 
 Taller de invierno de la **Facultad Politécnica – Universidad Nacional de Asunción (FP-UNA)**.
 
