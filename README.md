@@ -33,7 +33,7 @@ La idea es que cuando veas que Spring Boot "levanta un servidor en el puerto 808
 | 3 | 22 jul | IPC: procesos, hilos, sockets, HTTP a mano | [`clase03/`](clase03/) |
 | 4 | 24 jul | Spring Boot: primera API REST (ToDo sin persistencia) | [`clase04/`](clase04/) |
 | 5 | 25 jul | Persistencia con SQLite y Spring Data JPA | [`clase05/`](clase05/) |
-| 6 | 27 jul | Autenticación con JWT (Spring Security) | [`clase06/`](clase06/) |
+| 6 | 27 jul | Autenticación Basic Auth (Spring Security) | [`clase06/`](clase06/) |
 | 7 | 29 jul | Jobs programados con Spring Scheduling | [`clase07/`](clase07/) |
 | 8 | 30 jul | Testing (JUnit, MockMvc) | — (integrado en PoliBank) |
 | 9 | 31 jul mañana | Enunciado del proyecto final | — (ver PoliBank) |
@@ -58,7 +58,7 @@ La idea es que cuando veas que Spring Boot "levanta un servidor en el puerto 808
 │   └── http_ejemplos/              Cliente y servidor HTTP construidos a mano sobre sockets
 ├── clase04/todoapp/todoapp/         Primera API REST con Spring Boot (ToDo, sin persistencia real)
 ├── clase05/todoapp/todoapp/         ToDo app + persistencia en SQLite (JPA/Hibernate)
-├── clase06/todoapp/todoapp/         + autenticación JWT (AuthController, SecurityConfig, User entity)
+├── clase06/todoapp/todoapp/         + autenticación Basic Auth (AuthController, SecurityConfig, User entity)
 ├── clase07/todoapp/todoapp/         + jobs programados (Jobs.java, Spring Scheduling)
 └── Proyecto final/PoliBank/         App bancaria completa: cuentas, transferencias, saldo,
                                      autenticación, jobs, tests, frontend estático, Bruno collection
@@ -79,7 +79,7 @@ El curso usa instalación nativa en Windows. **No se usa Docker ni máquinas vir
 | Inspector de BD | DB Browser for SQLite |
 | Terminal | CMD o PowerShell nativo de Windows |
 
-Persistencia en SQLite vía `sqlite-jdbc` + `hibernate-community-dialects`. Spring Security + JWT para autenticación.
+Persistencia en SQLite vía `sqlite-jdbc` + `hibernate-community-dialects`. Spring Security con Basic Auth para autenticación.
 
 > Si usás Linux o Mac, los comandos son casi idénticos salvo que usás `./mvnw` en vez de `mvnw.cmd`.
 
@@ -124,7 +124,7 @@ Los links a los video-tutoriales están dentro de cada guía.
 
 [`Proyecto final/PoliBank/`](Proyecto%20final/PoliBank/) es una aplicación bancaria de ejemplo que integra todo lo visto en el curso:
 
-- Registro e inicio de sesión con JWT
+- Registro e inicio de sesión con Basic Auth
 - Gestión de cuentas bancarias y transferencias entre cuentas
 - Consulta de saldo
 - Job programado: `OfertaPrestamoJob` (genera ofertas de préstamo periódicamente)
